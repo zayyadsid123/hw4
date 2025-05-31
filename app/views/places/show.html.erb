@@ -7,9 +7,13 @@
   <p><%= entry["description"] %></p>
 <% end %>
 
+<% @user = User.find_by({ "id" => session["user_id"] }) %>
+<% if @user == nil %>
+<% else %>
 <p>
   <a href="/entries/new?place_id=<%= @place["id"] %>">New Entry</a>
 </p>
+<% end %>
 
 <p>
   <a href="/places">Back to All Places</a>
