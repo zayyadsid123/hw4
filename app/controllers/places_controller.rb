@@ -11,7 +11,7 @@ class PlacesController < ApplicationController
     if @user && @place
       @entries = Entry.where({ "place_id" => @place["id"], "user_id" => @user["id"] })
     else
-      @entries = []  # Empty array to prevent errors in the view
+      @entries = nil #nil to prevent errors in the view
     end
   end
 
