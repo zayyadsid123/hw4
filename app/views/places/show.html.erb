@@ -2,21 +2,31 @@
 
 <% if @entries %>
 <h2>My Entries</h2>
+
+<div class="row">
   <% for entry in @entries %>
-    <h3><%= entry["title"] %></h3>
-    <h4><%= entry["occurred_on"] %></h4>
-    <p><%= entry["description"] %></p>
+  
+  <div class="col-12 col-md-6 col-lg-4 mb-4">
+    <div class="card-body m-2">
+      <h3 class="card-title"><%= entry["title"] %></h3>
+      <h4 class="card-subtitle mb-2 text-muted"><%= entry["occurred_on"] %></h4>
+      <p class="card-text p-1"><%= entry["description"] %></p>
+    </div>
+  </div>
   <% end %>
+</div>
 <% end %>
 
 <% if @user %>
 <p>
-  <a href="/entries/new?place_id=<%= @place["id"] %>">New Entry</a>
+  <a class="btn btn-primary" href="/entries/new?place_id=<%= @place["id"] %>" role="button">New Entry</a>
+
 </p>
 <% else %>
   
 <% end %>
 
 <p>
-  <a href="/places">Back to All Places</a>
+  <a class="btn btn-primary" href="/places" role="button">Back to All Places</a>
+
 </p>
