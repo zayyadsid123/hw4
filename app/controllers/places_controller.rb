@@ -12,6 +12,7 @@ class PlacesController < ApplicationController
       @entries = Entry.where({ "place_id" => @place["id"], "user_id" => @user["id"] })
     else
       @entries = nil #nil to prevent errors in the view
+      flash["notice"] = "Login first."
     end
   end
 
