@@ -22,9 +22,8 @@
     <div class="card-body m-2">
       <h3 class="card-title"><%= entry["title"] %></h3>
       <h4 class="card-subtitle mb-2 text-muted"><%= entry["occurred_on"] %></h4>
-      <p class="card-text p-1"><%= entry["description"] %></p>
       <img src="<%= url_for(entry.uploaded_image) %>" class="img-fluid">
-
+      <p class="card-text p-1"><%= entry["description"] %></p>
     </div>
   </div>
   <% end %>
